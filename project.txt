@@ -1,3 +1,5 @@
 %This is where we are going to share all the matlab code that we will write for this project%
 
-readmatrix(dow_jones_index.data)
+filename = 'dow_jones_index.data';
+opts = detectImportOptions(filename, 'FileType', 'text');
+T = readtable(filename, opts);
