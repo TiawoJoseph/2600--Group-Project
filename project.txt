@@ -2,4 +2,5 @@
 
 filename = 'dow_jones_index.data';
 opts = detectImportOptions(filename, 'FileType', 'text');
-T = readtable(filename, opts);
+t = readtable(filename, opts);
+stackedplot(t)
