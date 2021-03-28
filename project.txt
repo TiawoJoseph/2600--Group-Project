@@ -4,3 +4,14 @@ filename = 'dow_jones_index.data';
 opts = detectImportOptions(filename, 'FileType', 'text');
 t = readtable(filename, opts);
 stackedplot(t)
+
+
+% Getting the summary for all of the data%
+summary(T)
+%Getting the variance and mean for the percent_return_next_dividend%
+var(T{:,{'percent_return_next_dividend'}})
+mean(T{:,{'percent_return_next_dividend'}})
+
+%Getting the variance and mean for the volume%
+var(T{:,{'volume'}})
+mean(T{:,{'volume'}})
