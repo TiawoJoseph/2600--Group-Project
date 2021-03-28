@@ -18,3 +18,26 @@ mean(T{:,{'percent_return_next_dividend'}})
 %Getting the variance and mean for the volume%
 var(T{:,{'volume'}})
 mean(T{:,{'volume'}})
+
+%the plots for the finance/banking
+AXP=stackedplot(t([13:24],16));
+BAC=stackedplot(t([25:36],16));
+JPM=stackedplot(t([181:192],16));
+TRV=stackedplot(t([301:312],16));
+
+%plots for the food/beverage
+KO=stackedplot(t([205:216],16));
+KRFT=stackedplot(t([193:204],16));
+MCD=stackedplot(t([217:228],16));
+
+%%the plots for the technology/telecommunications category
+T =stackedplot(t([289:300],16));
+BA =stackedplot(t([25:36],16));
+CSCO=stackedplot(t([61:72],16));
+GE=stackeplot(t([109:120],16));
+HPQ=stackedplot(t([133:144],16));
+INTC=stackedplot(t([157:168],16));
+IBM=stakedplot(t([145:156],16));
+MSFT=stackedplot(t([253:264],16));
+UTX=stackedplot(t([313:324],16));
+VZ=stackedplot(t([325:336],16));
