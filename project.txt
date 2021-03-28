@@ -5,6 +5,9 @@ opts = detectImportOptions(filename, 'FileType', 'text');
 t = readtable(filename, opts);
 stackedplot(t)
 
+%This will show the total number of number missing in each column in the data table 750 x 16%
+
+sum(ismissing(T))
 
 % Getting the summary for all of the data%
 summary(T)
