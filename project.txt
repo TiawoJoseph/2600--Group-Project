@@ -18,7 +18,9 @@ var(t{:,{'volume'}})
 mean(t{:,{'volume'}})
 
 %the plots for the finance/banking
+figure(1)
 AXP=stackedplot(t([13:24],16));
+grid
 BAC=stackedplot(t([25:36],16));
 JPM=stackedplot(t([181:192],16));
 TRV=stackedplot(t([301:312],16));
@@ -29,7 +31,9 @@ KRFT=stackedplot(t([193:204],16));
 MCD=stackedplot(t([217:228],16));
 
 %%the plots for the technology/telecommunications category
+
 T =stackedplot(t([289:300],16));
+
 BA =stackedplot(t([25:36],16));
 CSCO=stackedplot(t([61:72],16));
 GE=stackedplot(t([109:120],16));
