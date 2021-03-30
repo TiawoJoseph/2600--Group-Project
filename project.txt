@@ -1,8 +1,9 @@
 filename = 'dow_jones_index.data';
 opts = detectImportOptions(filename, 'FileType', 'text');
-t = readtable(filename, opts);
+t = readtable(filename, opts)
 figure(1)
 stackedplot(t)
+title('Dow Jones Index Overview')
 
 %This will show the total number of number missing in each column in the data table 750 x 16%
 sum(ismissing(t))
@@ -18,51 +19,154 @@ mean(t{:,{'percent_return_next_dividend'}})
 var(t{:,{'volume'}})
 mean(t{:,{'volume'}})
 
-%the plots for the finance/banking
+%the plots for other
 figure(2)
-AXP=stackedplot(t([13:24],16));
+MMM = stackedplot(t((230:241),16));
+title('Other: 3M')
 grid
 %---------------------------------%
 figure(3)
-MCD=stackedplot(t([217:228],16));
+AA = stackedplot(t((2:13),16)); 
+title('Other: Alcoa')
 grid
 %---------------------------------%
 figure(4)
-T =stackedplot(t([289:300],16));
+DD = stackedplot(t((86:97),16));
+title('Other: DuPont')
 grid
 %---------------------------------%
 figure(5)
-BA =stackedplot(t([25:36],16));
+XOM = stackedplot(t((350:361),16));
+title('Other: Exxon Mobil')
 grid
 %---------------------------------%
 figure(6)
-CSCO=stackedplot(t([61:72],16));
+JNJ = stackedplot(t((170:181),16));
+title('Other: Johnson & Johnson')
 grid
 %---------------------------------%
 figure(7)
-GE=stackedplot(t([109:120],16));
+MRK = stackedplot(t((242:253),16));
+title('Other: Merck & Co. (Pharma)')
 grid
 %---------------------------------%
 figure(8)
-HPQ=stackedplot(t([133:144],16));
+PFE = stackedplot(t((266:277),16));
+title('Other: Pfizer')
 grid
 %---------------------------------%
 figure(9)
-INTC=stackedplot(t([157:168],16));
+PG = stackedplot(t((278:289),16));
+title('Other: Procter & Gamble')
 grid
 %---------------------------------%
+
+
+%the plots for the finance/banking
 figure(10)
-IBM=stackedplot(t([145:156],16));
+AXP=stackedplot(t((14:25),16));
+title('Finance/Banking: American Express')
 grid
 %---------------------------------%
 figure(11)
-MSFT=stackedplot(t([253:264],16));
+BAC = stackedplot(t((38:49),16));
+title('Finance/Banking: Bank of America')
 grid
 %---------------------------------%
 figure(12)
-UTX=stackedplot(t([313:324],16));
+JPM = stackedplot(t((182:193),16));
+title('Finance/Banking: JPMorgan Chase')
 grid
 %---------------------------------%
 figure(13)
-VZ=stackedplot(t([325:336],16));
+TRV = stackedplot(t((302:313),16));
+title('Finance/Banking: Travelers')
+grid
+%---------------------------------%
+
+
+%the plots for telecommunications/technology
+figure(14)
+T =stackedplot(t((290:301),16));
+title('Technology/Telecommunications: AT&T')
+grid
+%---------------------------------%
+figure(15)
+BA =stackedplot(t((26:37),16));
+title('Technology/Telecommunications: Boeing')
+grid
+%---------------------------------%
+figure(16)
+CSCO=stackedplot(t((62:73),16));
+title('Technology/Telecommunications: Cisco Systems')
+grid
+%---------------------------------%
+figure(17)
+GE=stackedplot(t((110:121),16));
+title('Technology/Telecommunications: General Electric')
+grid
+%---------------------------------%
+figure(18)
+HPQ=stackedplot(t((134:145),16));
+title('Technology/Telecommunications: Hewlett-Packard')
+grid
+%---------------------------------%
+figure(19)
+INTC=stackedplot(t((158:169),16));
+title('Technology/Telecommunications: Intel')
+grid
+%---------------------------------%
+figure(20)
+IBM=stackedplot(t((146:157),16));
+title('Technology/Telecommunications: IBM')
+grid
+%---------------------------------%
+figure(21)
+MSFT=stackedplot(t((254:265),16));
+title('Technology/Telecommunications: Microsoft Corporation')
+grid
+%---------------------------------%
+figure(22)
+UTX=stackedplot(t((314:325),16));
+title('Technology/Telecommunications: United Technologies Corp')
+grid
+%---------------------------------%
+figure(23)
+VZ=stackedplot(t((326:337),16));
+title('Technology/Telecommunications: Verizon Communications')
+grid
+%---------------------------------%
+
+%the plots for industrial 
+figure(24)
+CAT = stackedplot(t((50:61),16));
+title('Industrial: Caterpillar')
+grid
+%---------------------------------%
+figure(25)
+CVX = stackedplot(t((74:85),16));
+title('Industrial: Chevron')
+grid
+%---------------------------------%
+figure(26)
+HD = stackedplot(t((122:133),16));
+title('Industrial: The Home Depot')
+grid
+%---------------------------------%
+
+
+%the plots for food/beverage
+figure(27)
+KO = stackedplot(t((206:217),16));
+title('Food/Beverage: Coca-Cola')
+grid
+%---------------------------------%
+figure(28)
+KRFT = stackedplot(t((194:205),16));
+title('Food/Beverage: Kraft')
+grid
+%---------------------------------%
+figure(29)
+MCD=stackedplot(t((218:229),16));
+title('Food/Beverage: McDonald''s')
 grid
