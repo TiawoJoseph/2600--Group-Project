@@ -21,25 +21,70 @@ mean(t{:,{'volume'}})
 figure(1)
 AXP=stackedplot(t([13:24],16));
 grid
+%--------------------------------%
+figure(2)
 BAC=stackedplot(t([25:36],16));
+grid
+%--------------------------------%
+figure(3)
 JPM=stackedplot(t([181:192],16));
+grid
+%--------------------------------%
+figure(4)
 TRV=stackedplot(t([301:312],16));
+grid
+%--------------------------------%
 
 %plots for the food/beverage
+figure(5)
 KO=stackedplot(t([205:216],16));
+grid
+%--------------------------------%
+figure(6)
 KRFT=stackedplot(t([193:204],16));
+grid
+%--------------------------------%
+figure(7)
 MCD=stackedplot(t([217:228],16));
+grid
 
 %%the plots for the technology/telecommunications category
-
+figure(8)
 T =stackedplot(t([289:300],16));
-
+grid
+%--------------------------------%
+figure(9)
 BA =stackedplot(t([25:36],16));
+grid
+%--------------------------------%
+figure(10)
 CSCO=stackedplot(t([61:72],16));
+grid
+%--------------------------------%
+figure(11)
 GE=stackedplot(t([109:120],16));
+grid
+%--------------------------------%
+figure(12)
 HPQ=stackedplot(t([133:144],16));
+grid
+%--------------------------------%
+figure(13)
 INTC=stackedplot(t([157:168],16));
+grid
+%--------------------------------%
+figure(14)
 IBM=stackedplot(t([145:156],16));
+grid
+%--------------------------------%
+figure(15)
 MSFT=stackedplot(t([253:264],16));
+grid
+%--------------------------------%
+figure(16)
 UTX=stackedplot(t([313:324],16));
+grid
+%--------------------------------%
+figure(17)
 VZ=stackedplot(t([325:336],16));
+grid
