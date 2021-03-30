@@ -1,14 +1,15 @@
 filename = 'dow_jones_index.data';
 opts = detectImportOptions(filename, 'FileType', 'text');
 t = readtable(filename, opts);
+figure(1)
 stackedplot(t)
 
 %This will show the total number of number missing in each column in the data table 750 x 16%
-
 sum(ismissing(t))
 
 % Getting the summary for all of the data%
 summary(t)
+
 %Getting the variance and mean for the percent_return_next_dividend%
 var(t{:,{'percent_return_next_dividend'}})
 mean(t{:,{'percent_return_next_dividend'}})
@@ -18,24 +19,50 @@ var(t{:,{'volume'}})
 mean(t{:,{'volume'}})
 
 %the plots for the finance/banking
+figure(2)
 AXP=stackedplot(t([13:24],16));
-BAC=stackedplot(t([25:36],16));
-JPM=stackedplot(t([181:192],16));
-TRV=stackedplot(t([301:312],16));
-
-%plots for the food/beverage
-KO=stackedplot(t([205:216],16));
-KRFT=stackedplot(t([193:204],16));
+grid
+%---------------------------------%
+figure(3)
 MCD=stackedplot(t([217:228],16));
-
-%%the plots for the technology/telecommunications category
+grid
+%---------------------------------%
+figure(4)
 T =stackedplot(t([289:300],16));
+grid
+%---------------------------------%
+figure(5)
 BA =stackedplot(t([25:36],16));
+grid
+%---------------------------------%
+figure(6)
 CSCO=stackedplot(t([61:72],16));
+grid
+%---------------------------------%
+figure(7)
 GE=stackedplot(t([109:120],16));
+grid
+%---------------------------------%
+figure(8)
 HPQ=stackedplot(t([133:144],16));
+grid
+%---------------------------------%
+figure(9)
 INTC=stackedplot(t([157:168],16));
+grid
+%---------------------------------%
+figure(10)
 IBM=stackedplot(t([145:156],16));
+grid
+%---------------------------------%
+figure(11)
 MSFT=stackedplot(t([253:264],16));
+grid
+%---------------------------------%
+figure(12)
 UTX=stackedplot(t([313:324],16));
+grid
+%---------------------------------%
+figure(13)
 VZ=stackedplot(t([325:336],16));
+grid
