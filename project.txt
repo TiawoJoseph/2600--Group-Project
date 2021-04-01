@@ -170,3 +170,47 @@ figure(29)
 MCD=stackedplot(t((218:229),16));
 title('Food/Beverage: McDonald''s')
 grid
+%-----------------------------------------------------------------------------------%
+%Plotting the percent_change_next_weeks_price%
+figure(3);
+Date = t{[1:12 361:373],3};
+N_AA= t{[1:12 361:373],14};
+N_AXP = t{[13:24 374:386],14};
+N_BA = t{[25:36 387:399],14};
+N_BAC = t{[37:48 400:412],14};
+N_CAT = t{[49:60 413:425],14};
+N_CSCO = t{[61:72 426:438],14};
+N_CVX = t{[73:84 439:451],14};
+N_DD = t{[85:96 452:464],14};
+N_DIS = t{[97:108 465:477],14};
+N_GE = t{[109:120 478:490],14};
+N_HD = t{[121:132 491:503],14};
+N_HPQ = t{[133:144 504:516],14};
+N_IBM = t{[145:156 517:529],14};
+N_INTC = t{[157:168 530:542],14};
+N_JNJ = t{[169:180 543:555],14};
+Next = timetable(Date,N_AA,N_AXP,N_BA,N_BAC,N_CAT,N_CSCO,N_CVX,N_DD,N_DIS,N_GE,N_HD,N_HPQ,N_IBM,N_INTC,N_JNJ);
+N_JPM = t{[181:192 556:568],14};
+N_KRFT = t{[193:204 569:581],14};
+N_KO = t{[205:216 582:594],14};
+N_MCD = t{[217:228 595:607],14};
+N_MMM = t{[229:240 608:620],14};
+N_MRK = t{[241:252 621:633],14};
+N_MSFT = t{[253:264 634:646],14};
+N_PFE = t{[265:276 647:659],14};
+N_PG = t{[277:288 660:672],14};
+N_T = t{[289:300 673:685],14};
+N_TRV = t{[301:312 686:698],14};
+N_UTX = t{[313:324 699:711],14};
+N_VZ = t{[325:336 712:724],14};
+N_WMT = t{[337:348 725:737],14};
+N_XOM = t{[349:360 738:750],14};
+Next2 = timetable(Date,N_JPM,N_KRFT,N_KO,N_MCD,N_MMM,N_MRK,N_MSFT,N_PFE,N_PG,N_T,N_TRV,N_UTX,N_VZ,N_WMT,N_XOM);
+tiledlayout(1,2);
+nexttile
+stackedplot(Next)
+title('Percent change next weeks price');
+nexttile
+stackedplot(Next2)
+title('Percent change next weeks price');
+%----------------------------------------------------------%
