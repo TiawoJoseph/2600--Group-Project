@@ -172,7 +172,7 @@ title('Food/Beverage: McDonald''s')
 grid
 %-----------------------------------------------------------------------------------%
 %Plotting the percent_change_next_weeks_price%
-figure(3);
+figure(30);
 Date = t{[1:12 361:373],3};
 N_AA= t{[1:12 361:373],14};
 N_AXP = t{[13:24 374:386],14};
