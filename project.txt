@@ -19,198 +19,95 @@ mean(t{:,{'percent_return_next_dividend'}})
 var(t{:,{'volume'}})
 mean(t{:,{'volume'}})
 
-%the plots for other
-figure(2)
-MMM = stackedplot(t((230:241),16));
-title('Other: 3M')
-grid
-%---------------------------------%
-figure(3)
-AA = stackedplot(t((2:13),16)); 
-title('Other: Alcoa')
-grid
-%---------------------------------%
-figure(4)
-DD = stackedplot(t((86:97),16));
-title('Other: DuPont')
-grid
-%---------------------------------%
-figure(5)
-XOM = stackedplot(t((350:361),16));
-title('Other: Exxon Mobil')
-grid
-%---------------------------------%
-figure(6)
-JNJ = stackedplot(t((170:181),16));
-title('Other: Johnson & Johnson')
-grid
-%---------------------------------%
-figure(7)
-MRK = stackedplot(t((242:253),16));
-title('Other: Merck & Co. (Pharma)')
-grid
-%---------------------------------%
-figure(8)
-PFE = stackedplot(t((266:277),16));
-title('Other: Pfizer')
-grid
-%---------------------------------%
-figure(9)
-PG = stackedplot(t((278:289),16));
-title('Other: Procter & Gamble')
-grid
-%---------------------------------%
+%Legend for prefixes in front of stock abbreviation: 
+%FFB = FOOD/BEVERAGE, FB = FINANCE AND BANKING, O = OTHER, TT =
+%TECHNOLOGY/TELECOMMUNICATIONS, I = INDUSTRIAL
 
-
-%the plots for the finance/banking
-figure(10)
-AXP=stackedplot(t((14:25),16));
-title('Finance/Banking: American Express')
-grid
-%---------------------------------%
-figure(11)
-BAC = stackedplot(t((38:49),16));
-title('Finance/Banking: Bank of America')
-grid
-%---------------------------------%
-figure(12)
-JPM = stackedplot(t((182:193),16));
-title('Finance/Banking: JPMorgan Chase')
-grid
-%---------------------------------%
-figure(13)
-TRV = stackedplot(t((302:313),16));
-title('Finance/Banking: Travelers')
-grid
-%---------------------------------%
-
-
-%the plots for telecommunications/technology
-figure(14)
-T =stackedplot(t((290:301),16));
-title('Technology/Telecommunications: AT&T')
-grid
-%---------------------------------%
-figure(15)
-BA =stackedplot(t((26:37),16));
-title('Technology/Telecommunications: Boeing')
-grid
-%---------------------------------%
-figure(16)
-CSCO=stackedplot(t((62:73),16));
-title('Technology/Telecommunications: Cisco Systems')
-grid
-%---------------------------------%
-figure(17)
-GE=stackedplot(t((110:121),16));
-title('Technology/Telecommunications: General Electric')
-grid
-%---------------------------------%
-figure(18)
-HPQ=stackedplot(t((134:145),16));
-title('Technology/Telecommunications: Hewlett-Packard')
-grid
-%---------------------------------%
-figure(19)
-INTC=stackedplot(t((158:169),16));
-title('Technology/Telecommunications: Intel')
-grid
-%---------------------------------%
-figure(20)
-IBM=stackedplot(t((146:157),16));
-title('Technology/Telecommunications: IBM')
-grid
-%---------------------------------%
-figure(21)
-MSFT=stackedplot(t((254:265),16));
-title('Technology/Telecommunications: Microsoft Corporation')
-grid
-%---------------------------------%
-figure(22)
-UTX=stackedplot(t((314:325),16));
-title('Technology/Telecommunications: United Technologies Corp')
-grid
-%---------------------------------%
-figure(23)
-VZ=stackedplot(t((326:337),16));
-title('Technology/Telecommunications: Verizon Communications')
-grid
-%---------------------------------%
-
-%the plots for industrial 
-figure(24)
-CAT = stackedplot(t((50:61),16));
-title('Industrial: Caterpillar')
-grid
-%---------------------------------%
-figure(25)
-CVX = stackedplot(t((74:85),16));
-title('Industrial: Chevron')
-grid
-%---------------------------------%
-figure(26)
-HD = stackedplot(t((122:133),16));
-title('Industrial: The Home Depot')
-grid
-%---------------------------------%
-
-
-%the plots for food/beverage
-figure(27)
-KO = stackedplot(t((206:217),16));
-title('Food/Beverage: Coca-Cola')
-grid
-%---------------------------------%
-figure(28)
-KRFT = stackedplot(t((194:205),16));
-title('Food/Beverage: Kraft')
-grid
-%---------------------------------%
-figure(29)
-MCD=stackedplot(t((218:229),16));
-title('Food/Beverage: McDonald''s')
-grid
-%-----------------------------------------------------------------------------------%
-%Plotting the percent_change_next_weeks_price%
-figure(30);
+%the plots for return next dividend
+figure(2);
 Date = t{[1:12 361:373],3};
-N_AA= t{[1:12 361:373],14};
-N_AXP = t{[13:24 374:386],14};
-N_BA = t{[25:36 387:399],14};
-N_BAC = t{[37:48 400:412],14};
-N_CAT = t{[49:60 413:425],14};
-N_CSCO = t{[61:72 426:438],14};
-N_CVX = t{[73:84 439:451],14};
-N_DD = t{[85:96 452:464],14};
-N_DIS = t{[97:108 465:477],14};
-N_GE = t{[109:120 478:490],14};
-N_HD = t{[121:132 491:503],14};
-N_HPQ = t{[133:144 504:516],14};
-N_IBM = t{[145:156 517:529],14};
-N_INTC = t{[157:168 530:542],14};
-N_JNJ = t{[169:180 543:555],14};
-Next = timetable(Date,N_AA,N_AXP,N_BA,N_BAC,N_CAT,N_CSCO,N_CVX,N_DD,N_DIS,N_GE,N_HD,N_HPQ,N_IBM,N_INTC,N_JNJ);
-N_JPM = t{[181:192 556:568],14};
-N_KRFT = t{[193:204 569:581],14};
-N_KO = t{[205:216 582:594],14};
-N_MCD = t{[217:228 595:607],14};
-N_MMM = t{[229:240 608:620],14};
-N_MRK = t{[241:252 621:633],14};
-N_MSFT = t{[253:264 634:646],14};
-N_PFE = t{[265:276 647:659],14};
-N_PG = t{[277:288 660:672],14};
-N_T = t{[289:300 673:685],14};
-N_TRV = t{[301:312 686:698],14};
-N_UTX = t{[313:324 699:711],14};
-N_VZ = t{[325:336 712:724],14};
-N_WMT = t{[337:348 725:737],14};
-N_XOM = t{[349:360 738:750],14};
-Next2 = timetable(Date,N_JPM,N_KRFT,N_KO,N_MCD,N_MMM,N_MRK,N_MSFT,N_PFE,N_PG,N_T,N_TRV,N_UTX,N_VZ,N_WMT,N_XOM);
+O.AA= t{[1:12 361:373],16};
+FB.AXP = t{[13:24 374:386],16};
+TT.BA = t{[25:36 387:399],16};
+FB.BAC = t{[37:48 400:412],16};
+I.CAT = t{[49:60 413:425],16};
+TT.CSCO = t{[61:72 426:438],16};
+I.CVX = t{[73:84 439:451],16};
+O.DD = t{[85:96 452:464],16};
+O.DIS = t{[97:108 465:477],16};
+TT.GE = t{[109:120 478:490],16};
+I.HD = t{[121:132 491:503],16};
+TT.HPQ = t{[133:144 504:516],16};
+TT.IBM = t{[145:156 517:529],16};
+TT.INTC = t{[157:168 530:542],16};
+O.JNJ = t{[169:180 543:555],16};
+Next = timetable(Date,O.AA,FB.AXP,TT.BA,FB.BAC,I.CAT,TT.CSCO,I.CVX,O.DD,O.DIS,TT.GE,I.HD,TT.HPQ,TT.IBM,TT.INTC,O.JNJ);
+FB.JPM = t{[181:192 556:568],16};
+FFB.KRFT = t{[193:204 569:581],16};
+FFB.KO = t{[205:216 582:594],16};
+FFB_MCD = t{[217:228 595:607],16};
+O.MMM = t{[229:240 608:620],16};
+O.MRK = t{[241:252 621:633],16};
+TT.MSFT = t{[253:264 634:646],16};
+O.PFE = t{[265:276 647:659],16};
+O.PG = t{[277:288 660:672],16};
+FB.T = t{[289:300 673:685],16};
+FB.TRV = t{[301:312 686:698],16};
+TT.UTX = t{[313:324 699:711],16};
+TT.VZ = t{[325:336 712:724],16};
+FFB.WMT = t{[337:348 725:737],16};
+O.XOM = t{[349:360 738:750],16};
+Next2 = timetable(Date,FB.JPM,FFB.KRFT,FFB.KO,FFB_MCD,O.MMM,O.MRK,TT.MSFT,O.PFE,O.PG,FB.T,FB.TRV,TT.UTX,TT.VZ,FFB.WMT,O.XOM);
 tiledlayout(1,2);
 nexttile
 stackedplot(Next)
-title('Percent change next weeks price');
+title('Percent return next dividend');
 nexttile
 stackedplot(Next2)
+title('Percent return next dividend');
+%----------------------------------------------------------%
+%----------------------------------------------------------%
+%-----------------------------------------------------------------------------------%
+%Plotting the percent_change_next_weeks_price%
+figure(3);
+Date = t{[1:12 361:373],3};
+O_AA= t{[1:12 361:373],14};
+FB_AXP = t{[13:24 374:386],14};
+TT_BA = t{[25:36 387:399],14};
+FB_BAC = t{[37:48 400:412],14};
+I_CAT = t{[49:60 413:425],14};
+TT_CSCO = t{[61:72 426:438],14};
+I_CVX = t{[73:84 439:451],14};
+O_DD = t{[85:96 452:464],14};
+O_DIS = t{[97:108 465:477],14};
+TT_GE = t{[109:120 478:490],14};
+I_HD = t{[121:132 491:503],14};
+TT_HPQ = t{[133:144 504:516],14};
+TT_IBM = t{[145:156 517:529],14};
+TT_INTC = t{[157:168 530:542],14};
+O_JNJ = t{[169:180 543:555],14};
+Next3 = timetable(Date,O_AA,FB_AXP,TT_BA,FB_BAC,I_CAT,TT_CSCO,I_CVX,O_DD,O_DIS,TT_GE,I_HD,TT_HPQ,TT_IBM,TT_INTC,O_JNJ);
+FB_JPM = t{[181:192 556:568],14};
+FFB_KRFT = t{[193:204 569:581],14};
+FFB_KO = t{[205:216 582:594],14};
+FFB_MCD = t{[217:228 595:607],14};
+O_MMM = t{[229:240 608:620],14};
+O_MRK = t{[241:252 621:633],14};
+TT_MSFT = t{[253:264 634:646],14};
+O_PFE = t{[265:276 647:659],14};
+O_PG = t{[277:288 660:672],14};
+FB_T = t{[289:300 673:685],14};
+FB_TRV = t{[301:312 686:698],14};
+TT_UTX = t{[313:324 699:711],14};
+TT_VZ = t{[325:336 712:724],14};
+FFB_WMT = t{[337:348 725:737],14};
+O_XOM = t{[349:360 738:750],14};
+Next4 = timetable(Date,FB_JPM,FFB_KRFT,FFB_KO,FFB_MCD,O_MMM,O_MRK,TT_MSFT,O_PFE,O_PG,FB_T,FB_TRV,TT_UTX,TT_VZ,FFB_WMT,O_XOM);
+tiledlayout(1,2);
+nexttile
+stackedplot(Next3)
+title('Percent change next weeks price');
+nexttile
+stackedplot(Next4)
 title('Percent change next weeks price');
 %----------------------------------------------------------%
