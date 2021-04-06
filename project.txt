@@ -203,16 +203,27 @@ fin(1);
 figure(4);
 %%getting the bar graph of prices for the first quarter
 bar(test_result(1:360,:));
+title('First quarter opening price');
+xlabel('30 companies combined 360 weeks');
+ylabel('price($)');
 figure(5);
 %getting the bar graph of prices for the second quarter
 bar(test_result(361:750,:));
+title('Second quarter opening price');
+xlabel('30 companies combined 360 weeks');
+ylabel('price($)');
 figure(6);
 %Creating a box plot of the data in the first quarter
 boxplot(test_result(1:360,:));
+title('First quarter opening price box plot or 5 number summary');
+xlabel('quarter');
+ylabel('price($)');
 figure(7);
 %Creating a boxplot of the data in the second quarter
 boxplot(test_result(361:750,:));
-
+title('Second quarter opening price box plot or 5 number summary');
+xlabel('quarter');
+ylabel('price($)');
 %Getting the variance oof the 1st and 2nd quarter price
 var(test_result(361:750))
 var(test_result(1:360))
