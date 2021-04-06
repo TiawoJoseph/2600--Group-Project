@@ -20,12 +20,20 @@ disp("numbers missing:" + missNum)
 summary(t)
 
 %Getting the variance and mean for the percent_return_next_dividend%
-percent_return_next_dividend_variance = var(t{:,{'percent_return_next_dividend'}});
-percent_return_next_dividend_mean = mean(t{:,{'percent_return_next_dividend'}});
+prndVar = var(t{:,{'percent_return_next_dividend'}});
+prndMean = mean(t{:,{'percent_return_next_dividend'}});
+
+%Displays the variance and mean for the percent_return_next_dividend%
+disp("Variance for percent_return_next_dividend: " + prndVar)
+disp("Mean for percent_return_next_dividend: " + prndMean)
 
 %Getting the variance and mean for the volume%
-volume_variance = var(t{:,{'volume'}});
-volume_mean = mean(t{:,{'volume'}});
+volVar = var(t{:,{'volume'}});
+volMean = mean(t{:,{'volume'}});
+
+%Displays the variance and mean for the volume%
+disp("Variance for the volume: " + volVar)
+disp("Mean for teh volume: " + volMean)
 
 %Legend for prefixes in front of stock abbreviation: 
 %FFB = FOOD/BEVERAGE, FB = FINANCE AND BANKING, O = OTHER, TT =
