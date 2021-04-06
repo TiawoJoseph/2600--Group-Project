@@ -33,7 +33,7 @@ volMean = mean(t{:,{'volume'}});
 
 %Displays the variance and mean for the volume%
 disp("Variance for the volume: " + volVar)
-disp("Mean for teh volume: " + volMean)
+disp("Mean for the volume: " + volMean)
 
 %Legend for prefixes in front of stock abbreviation: 
 %FFB = FOOD/BEVERAGE, FB = FINANCE AND BANKING, O = OTHER, TT =
