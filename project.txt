@@ -13,7 +13,8 @@ stackedplot(t)
 title('Dow Jones Index Overview')
 
 %This will show the total number of number missing in each column in the data table 750 x 16%
-missing_numbers = sum(ismissing(t));
+missNum = sum(ismissing(t));
+disp("numbers missing:" + missNum)
 
 % Getting the summary for all of the data%
 summary(t)
