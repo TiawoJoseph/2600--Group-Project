@@ -151,6 +151,7 @@ title('Percent change next weeks price');
 %----------------------------------------------------------%
 
 
+
 %Getting the opening prices for all of the stocks
 test=t(:,"open");
 
@@ -190,21 +191,20 @@ quater_conversion=table2array(t(:,1));
 fin2=find(quater_conversion==1);
 fin=find(quater_conversion==2);
 fin(1);
-
-
+%graphing our %
+figure(4);
 %%getting the bar graph of prices for the first quarter
-bar(test_result([1:360],:));
-
+bar(test_result(1:360,:));
+figure(5);
 %getting the bar graph of prices for the second quarter
-bar(test_result([361:750],:));
-
+bar(test_result(361:750,:));
+figure(6);
 %Creating a box plot of the data in the first quarter
-boxplot(test_result([1:360],:));
-
+boxplot(test_result(1:360,:));
+figure(7);
 %Creating a boxplot of the data in the second quarter
-boxplot(test_result([361:750],:));
+boxplot(test_result(361:750,:));
 
 %Getting the variance oof the 1st and 2nd quarter price
-var(test_result([361:750]))
-var(test_result([1:360]))
-
+var(test_result(361:750))
+var(test_result(1:360))
