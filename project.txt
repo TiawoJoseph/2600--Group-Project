@@ -123,3 +123,60 @@ nexttile
 stackedplot(Next4)
 title('Percent change next weeks price');
 %----------------------------------------------------------%
+
+%calling file name 'dow_jones_index.data'%
+filename = 'dow_jones_index.data';
+%read in the file as text%
+opts = detectImportOptions(filename, 'FileType', 'text');
+%making a table of the stocks data, named 't' table%
+t = readtable(filename, opts); 
+
+%Getting the opening prices for all of the stocks
+test=t(:,"open");
+%converting the table into a cell array 
+test_Convert=table2array(test);
+%removing the dollar sign from the cell array so that i am able to use
+%str2double without NaN
+C = strrep(test_Convert, '$', '');
+%converting the cell array into double values
+ test_result=str2double(C);
+ 
+ %getting the mean of the prices
+  mean(test_result);
+  %getting the vairance of the prices
+  var(test_result);
+  %getting the highest price
+ mx= max(test_result);
+   %getting the lowest price
+ mn= min(test_result);
+  %getting the index of the highest price
+  find(test_result==172.1100);
+   %getting the index of the lowest price
+  find(test_result==mn);
+  
+  %converting the quater row into a cell array so that i can use the find
+  %function on it 
+  quater_conversion=table2array(t(:,1));
+  
+  %using the find function to figure out where q1 ends and q2 begins
+  fin2=find(quater_conversion==1);
+  fin=find(quater_conversion==2);
+  fin(1);
+  
+  
+  %%getting the bar graph of prices for the first quarter
+  bar(test_result([1:360],:));
+  
+  %getting the bar graph of prices for the second quarter
+  bar(test_result([361:750],:));
+  
+  %Creating a box plot of the data in the first quarter
+  boxplot(test_result([1:360],:));
+  
+  %Creating a boxplot of the data in the second quarter
+  boxplot(test_result([361:750],:));
+  
+  %Getting the variance oof the 1st and 2nd quarter price
+  var(test_result([361:750]))
+  var(test_result([1:360]))
+  
